@@ -1,0 +1,13 @@
+import { useEffect } from "react";
+import "./App.css";
+import {getMovies} from "./utils/api"
+
+function App() {
+  return (
+    <>
+      <h2>app</h2>
+    </>
+  );
+}
+
+export default App;
