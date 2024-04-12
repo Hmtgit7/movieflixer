@@ -26,7 +26,8 @@ const Header = () => {
     <header className="header">
       <ContentWrapper>
         <div className="logo">
-          <img src={logo} alt="movie-flixer" />
+          {/* <img src={logo} alt="movie-flixer" /> */}
+          <span>Movie Flixer</span>
         </div>
         <ul className="menuItems">
           <li className="menuItems">Movies</li>
