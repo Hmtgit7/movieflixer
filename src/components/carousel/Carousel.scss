@@ -11,8 +11,8 @@
     font-weight: normal;
   }
   .arrow {
-    font-size: 30px;
-    color: black;
+    font-size: 40px;
+    color: white;
     position: absolute;
     top: 44%;
     transform: translateY(-50%);
@@ -28,10 +28,11 @@
     }
   }
   .carouselLeftNav {
-    left: 30px;
+    left: 0px;
+
   }
   .carouselRighttNav {
-    right: 30px;
+    right: 0px;
   }
   .loadingSkeleton {
     display: flex;
