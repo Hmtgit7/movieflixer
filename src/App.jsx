@@ -11,7 +11,7 @@ import { Home, Details, SearchResult, Explore, PageNotFound } from "./pages";
 function App() {
   const dispatch = useDispatch();
   const { url } = useSelector((state) => state.home);
-  console.log(url);
+  // console.log(url);
 
   useEffect(() => {
     fetchApiConfig();
@@ -20,7 +20,7 @@ function App() {
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
-      console.log(res);
+      // console.log(res);
 
       const url = {
         backdrop: res.images.secure_base_url + "original",
@@ -43,7 +43,7 @@ function App() {
 
     const data = await Promise.all(promise);
     data.map(({genres})=>{
-      console.log(genres);
+      // console.log(genres);
       return genres.map((item)=>(allGenres[item.id]=item))
     })
 
