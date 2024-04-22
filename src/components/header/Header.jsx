@@ -18,7 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -75,7 +75,7 @@ const Header = () => {
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
+        <div className="logo" onClick={()=>{window.location.reload()}}>
           {/* <img src={logo} alt="movie-flixer" /> */}
           <span>Movie Flixer</span>
         </div>
