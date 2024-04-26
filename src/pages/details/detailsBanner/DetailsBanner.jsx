@@ -5,14 +5,12 @@ import dayjs from "dayjs";
 
 import "./DetailsBanner.scss";
 
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import useFetch from "../../../Hooks/useFetch.jsx";
-import Genres from "../../../components/Genres/Genres";
-import CircleRating from "../../../components/circleRating/CircleRating";
-import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
 import { Playbtn } from "../Playbtn.jsx";
 
+import {ContentWrapper,Genres,CircleRating,Img} from "../../../components"
+ 
 const DetailsBanner = ({ video, crew }) => {
   const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${mediaType}/${id}`);
@@ -71,6 +69,30 @@ const DetailsBanner = ({ video, crew }) => {
                     <div className="overview">
                       <div className="heading">Overview</div>
                       <div className="description">{data?.overview}</div>
+                    </div>
+                    <div className="info">
+                      {data.status && (
+                        <div className="infoItem">
+                          <span className="text bold">Status: </span>
+                          <span className="text">{data.status}</span>
+                        </div>
+                      )}
+                      {data.release_date && (
+                        <div className="infoItem">
+                          <span className="text bold">Release Date: </span>
+                          <span className="text">
+                            {dayjs(data.release_date).format("MMM D, YYYY")}
+                          </span>
+                        </div>
+                      )}
+                      {data.runtime && (
+                        <div className="infoItem">
+                          <span className="text bold">Runtime: </span>
+                          <span className="text">
+                            {toHoursAndMinutes(data.runtime)}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
